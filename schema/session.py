@@ -12,5 +12,5 @@ class ResponseSession(SessionBase):
     role: str
     expire: float
 
-class TokenSession(BaseModel):
+class TokenSession(SessionBase):
     expire: float
