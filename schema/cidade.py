@@ -5,3 +5,6 @@ class CidadeBase(BaseModel):
 
 class ResponseCidade(CidadeBase):
     id: int
+
+class RequestCidade(CidadeBase):
+    regiao_id: int

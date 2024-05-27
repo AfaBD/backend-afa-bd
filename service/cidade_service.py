@@ -1,6 +1,6 @@
 from database import SessionLocal
 from model import Cidade
-from schema import ResponseCidade
+from schema import ResponseCidade, RequestCidade
 
 class CidadeService:
 
@@ -12,3 +12,15 @@ class CidadeService:
             res.append(ResponseCidade(id=cidade.id,nome=cidade.nome))
         return res
         
+    def create_cidade(self,request_cidade:RequestCidade):
+        cidade = Cidade()
+        cidade.nome = request_cidade.nome
+        cidade.id_regiao = request_cidade.regiao_id
+        with SessionLocal() as db:
+            db.add(cidade)
+            db.commit()
+            db.refresh(cidade)
+        return ResponseCidade(
+            id=cidade.id,
+            nome=cidade.nome
+        )        
