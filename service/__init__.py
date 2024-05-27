@@ -4,6 +4,8 @@ from .role_service import RoleService
 from .regiao_service import RegiaoService
 from .cidade_service import CidadeService
 from .tipo_escola_service import TipoEscolaService
+from .unidade_escolar_service import UnidadeEscolarService
+from .endereco_service import EnderecoService
 
 __all__ = [
     'SessionService',
@@ -11,5 +13,7 @@ __all__ = [
     'RoleService',
     'RegiaoService',
     'CidadeService',
-    'TipoEscolaService'
+    'TipoEscolaService',
+    'UnidadeEscolarService',
+    'EnderecoService'
 ]
