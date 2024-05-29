@@ -6,7 +6,7 @@ from controller import query_router,session_router,user_router,role_router,regia
 
 app = FastAPI()
 
-origins = ["*"]
+origins = ["http://localhost:5173"]
 
 app.add_middleware(
     CORSMiddleware,
