@@ -1,7 +1,7 @@
 from database import SessionLocal
 from model import UnidadeEscolar,Endereco,Cidade
 from exception import unidade_escolar_not_found
-from schema import ResponseUnidadeEscolar, ResponseTipoEscola, ResponseEndereco, RequestUnidadeEscolar
+from schema import ResponseUnidadeEscolar, ResponseTipoEscola, ResponseEndereco, RequestUnidadeEscolar, ResponseCategoriaEscola
 from sqlalchemy.orm import joinedload
 from .endereco_service import EnderecoService
 
@@ -18,6 +18,10 @@ class UnidadeEscolarService:
             id=unidade_escolar.tipo.id,
             descricao=unidade_escolar.tipo.description
         )
+        categoria = ResponseCategoriaEscola(
+            id=unidade_escolar.categoria.id,
+            descricao=unidade_escolar.categoria.description
+        )
         endereco = ResponseEndereco(
             rua=unidade_escolar.endereco.rua,
             numero=unidade_escolar.endereco.numero,
@@ -31,6 +35,7 @@ class UnidadeEscolarService:
             nome= unidade_escolar.nome,
             cod_inep=unidade_escolar.cod_inep,
             tipo=tipo_escola,
+            categoria=categoria,
             endereco=endereco
         )
 
@@ -38,6 +43,7 @@ class UnidadeEscolarService:
         unidade_escolar = UnidadeEscolar()
         unidade_escolar.nome = unidade_escolar_request.nome
         unidade_escolar.cod_inep = unidade_escolar_request.cod_inep
+        unidade_escolar.id_categoria = unidade_escolar_request.categoria_id
         unidade_escolar.id_tipo = unidade_escolar_request.tipo_id
         endereco_service = EnderecoService()
         endereco = endereco_service.create_endereco(unidade_escolar_request.endereco)

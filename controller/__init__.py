@@ -6,6 +6,7 @@ from .cidade_controller import router as cidade_router
 from .tipo_escola_controller import router as tipo_escola_router
 from .unidade_escolar_controller import router as unidade_escolar_router
 from .endereco_controller import router as endereco_router
+from .query_controller import router as query_router
 
 __all__ = [
     'session_router',
@@ -15,5 +16,6 @@ __all__ = [
     'cidade_router',
     'tipo_escola_router',
     'unidade_escolar_router',
-    'endereco_router'
+    'endereco_router',
+    'query_router'
 ]

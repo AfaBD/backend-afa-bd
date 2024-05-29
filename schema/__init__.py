@@ -6,6 +6,8 @@ from .cidade import CidadeBase,ResponseCidade,RequestCidade
 from .tipo_escola import BaseTipoEscola,ResponseTipoEscola
 from .endereco import ResponseEndereco,RequestEndereco
 from .unidade_escolar import ResponseUnidadeEscolar,RequestUnidadeEscolar
+from .categoria import ResponseCategoriaEscola
+from .query import Query201,Query202
 
 __all__ = [
     "RequestSession",
@@ -25,5 +27,8 @@ __all__ = [
     "ResponseEndereco",
     "ResponseUnidadeEscolar",
     "RequestEndereco",
-    "RequestUnidadeEscolar"
+    "RequestUnidadeEscolar",
+    "ResponseCategoriaEscola",
+    "Query201",
+    "Query202"
 ]

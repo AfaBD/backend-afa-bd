@@ -6,6 +6,7 @@ from .cidade_service import CidadeService
 from .tipo_escola_service import TipoEscolaService
 from .unidade_escolar_service import UnidadeEscolarService
 from .endereco_service import EnderecoService
+from .query_service import QueryService
 
 __all__ = [
     'SessionService',
@@ -15,5 +16,6 @@ __all__ = [
     'CidadeService',
     'TipoEscolaService',
     'UnidadeEscolarService',
-    'EnderecoService'
+    'EnderecoService',
+    'QueryService'
 ]

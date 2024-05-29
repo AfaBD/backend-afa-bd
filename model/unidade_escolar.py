@@ -12,6 +12,9 @@ class UnidadeEscolar(Base):
     id_tipo = Column("tip_id", Integer, ForeignKey("tipo_escola.tip_id"))
     tipo = relationship("TipoEscola", back_populates="unidades", lazy="selectin")
 
+    id_categoria = Column("cat_id", Integer, ForeignKey("categoria_escolar.cat_id"))
+    categoria = relationship("Categoria", back_populates="unidades", lazy="selectin")
+
     id_endereco = Column("end_id", Integer, ForeignKey("endereco.end_id"))
     endereco = relationship("Endereco", back_populates="unidades", lazy="selectin")
     
